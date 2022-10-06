@@ -1,5 +1,5 @@
 {
-    "name": "pconfig",
+    "name": "@pcrab/pconfig",
     "version": "0.0.1",
     "description": "Simple pconfig",
     "license": "MIT",
