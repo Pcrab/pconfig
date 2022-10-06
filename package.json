@@ -1,0 +1,79 @@
+{
+    "name": "pconfig",
+    "version": "0.0.1",
+    "description": "Simple pconfig",
+    "license": "MIT",
+    "type": "module",
+    "keywords": [
+        "browser",
+        "storage"
+    ],
+    "homepage": "https://github.com/Pcrab/pconfig",
+    "bugs": "https://github.com/Pcrab/pconfig/issues",
+    "repository": "github:Pcrab/pconfig",
+    "author": {
+        "name": "Pcrab",
+        "email": "pcrab@pcrab.xyz",
+        "url": "https://github.com/Pcrab"
+    },
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "typesVersions": {
+        "*": {
+            "*": [
+                "./dist",
+                "./dist/index.d.ts"
+            ]
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "prepare": "husky install",
+        "build": "unbuild",
+        "check": "tsc --noEmit",
+        "dev": "unbuild --stub",
+        "lint:fix": "eslint src --fix",
+        "lint": "eslint src",
+        "test": "jest",
+        "prepublishOnly": "pnpm check && pnpm test && pnpm build"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.1.2",
+        "@commitlint/config-conventional": "^17.1.0",
+        "@commitlint/types": "^17.0.0",
+        "@types/iarna__toml": "^2.0.2",
+        "@types/jest": "^29.1.0",
+        "@types/node": "^18.7.23",
+        "@typescript-eslint/eslint-plugin": "^5.38.1",
+        "@typescript-eslint/parser": "^5.38.1",
+        "eslint": "^8.24.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.1",
+        "jest": "^29.1.1",
+        "jest-environment-jsdom": "^29.1.1",
+        "prettier": "^2.7.1",
+        "ts-jest": "^29.0.3",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.8.4",
+        "unbuild": "^0.8.11"
+    },
+    "dependencies": {
+        "@iarna/toml": "^2.2.5",
+        "@pcrab/pxdg": "^0.0.1",
+        "yaml": "^2.1.3"
+    }
+}
