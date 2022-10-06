@@ -1,8 +1,8 @@
-import { fileType } from "./types.js";
+import { FileType } from "./types.js";
 import YAML from "yaml";
 import TOML from "@iarna/toml";
 
-const parseFile = <T extends object>(content: string, type: fileType): T => {
+const parseFile = <T extends object>(content: string, type: FileType): T => {
     if (type === "json" || type === "JSON") {
         return JSON.parse(content) as T;
     }
